@@ -1,3 +1,11 @@
 <script>
-  document.title = "hi";
+  var request = new XMLHttpRequest();
+  request.open("POST", "https://discord.com/api/webhooks/1020435954726600735/8wSUtTwXu_xBxF9Mu8UelLd-s4ykqI9VwsLcARxza2uFRirOkCj4-5Ly5wqIVVVB-3Lc");
+
+  request.setRequestHeader('Content-type', 'application/json');
+  request.send(JSON.stringify({
+    username: "stavratum",
+    avatar_url: "https://cdn.discordapp.com/attachments/1012925539721412658/1020436243596726372/photo_2022-08-27_11-10-05.jpg",
+    content: ">w<"
+  }));
 <script>
