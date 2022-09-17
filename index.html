@@ -1,11 +1,18 @@
-<script>
-  var request = new XMLHttpRequest();
-  request.open("POST", "https://discord.com/api/webhooks/1020435954726600735/8wSUtTwXu_xBxF9Mu8UelLd-s4ykqI9VwsLcARxza2uFRirOkCj4-5Ly5wqIVVVB-3Lc");
+<!DOCTYPE html>
+<html>
+	<body style="background-color:#fcfc03;"></body>
+	<script>
+		function _255() {
+			return Math.floor( Math.random() * 255 ) + 1
+		}
 
-  request.setRequestHeader('Content-type', 'application/json');
-  request.send(JSON.stringify({
-    username: "stavratum",
-    avatar_url: "https://cdn.discordapp.com/attachments/1012925539721412658/1020436243596726372/photo_2022-08-27_11-10-05.jpg",
-    content: ">w<"
-  }));
-<script>
+		function ToHex(c) {
+		  var hex = c.toString(16);
+		  return hex.length == 1 ? "0" + hex : hex;
+		}
+
+		function rgbToHex(r, g, b) { return "#" + ToHex(r) + ToHex(g) + ToHex(b); }
+		
+		document.body.style.backgroundColor = "#" + ToHex(_255()) + ToHex(_255()) + ToHex(_255())
+	</script>
+</html>
