@@ -1,5 +1,5 @@
-img[ name = "avatar" ] {
-	border-radius: 10%;
+img[ name = avatar ] {
+	border-radius: 5%;
 	margin: auto;
 	display: block;
 }
