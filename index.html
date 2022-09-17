@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<body style="background-color:#fcfc03;"></body>
 	<script>
-		function _255() {
-			return Math.floor( Math.random() * 255 ) + 1
-		}
-
-		function ToHex(c) {
-		  var hex = c.toString(16);
-		  return hex.length == 1 ? "0" + hex : hex;
-		}
-
-		function rgbToHex(r, g, b) { return "#" + ToHex(r) + ToHex(g) + ToHex(b); }
-		
-		document.body.style.backgroundColor = "#" + ToHex(_255()) + ToHex(_255()) + ToHex(_255())
+		function _255(){ return Math.floor( Math.random() * 255 ) }
+		document.body.style.backgroundColor = "rbg("+_255()+","+_255()+","+_255()+")" 
 	</script>
 </html>
