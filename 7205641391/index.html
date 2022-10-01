@@ -1,3 +1,4 @@
+local discord = loadstring(game:HttpGet'https://raw.githubusercontent.com/stavratum/lua/main/Discord.lua')();
 local uwuware, connected = loadstring(game:HttpGet'https://raw.githubusercontent.com/OPENCUP/random-texts/main/ui.lua')(), {} do
     local Window = uwuware:CreateWindow'AFC | MMM AP'
     local Main = Window:AddFolder'Main'
@@ -22,7 +23,7 @@ local uwuware, connected = loadstring(game:HttpGet'https://raw.githubusercontent
                 setclipboard"https://discord.gg/DaaeeHdGur"
             else
                 print"Exploit doesn't support 'setclipboard'"
-                print"\n\n== DISCORD INVITE ==\nhttps://discord.gg/DaaeeHdGur\n===================="
+                print"\n\n== DISCORD INVITE ==\n" .. discord .. "r\n===================="
             end
         end
     }
