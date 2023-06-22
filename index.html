@@ -7,15 +7,19 @@
 <html>
 	<head>
 		<script>
-			const response = await fetch("invite")
-			
-			const body = response.body.getReader()
-			const object = await body.read()
+			async function main() {
+				const response = await fetch("invite")
+				
+				const body = response.body.getReader()
+				const object = await body.read()
+	
+				const code = String.fromCharCode.apply(null, object.value)
+				const link = `https://discord.gg/${code}`
+				
+				window.location.href = link
+			}
 
-			const code = String.fromCharCode.apply(null, object.value)
-			const link = `https://discord.gg/${code}`
-			
-			window.location.href = link
+			main()
 		</script>
 	</head>
 	
