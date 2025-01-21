@@ -1,29 +1,79 @@
-<meta property="og:type" content="website">
-<meta property="og:title" content=">w<" />
-<meta property="og:description" content="am I daddy's cute kitty? 🥺" />
-<meta property="og:url" content="stavratum.github.io" />
-
 <!DOCTYPE html>
-<html>
 	<head>
-		<script>
-			async function main() {
-				const response = await fetch("invite")
-				
-				const body = response.body.getReader()
-				const object = await body.read()
-	
-				const code = String.fromCharCode.apply(null, object.value)
-				const link = `https://discord.gg/${code}`
-				
-				window.location.href = link
-			}
-
-			main()
-		</script>
+		<title>stavratum's awesome</title>
 	</head>
-	
+
 	<body>
-		<b>am I daddy's cute kitty? 🥺</b>
+		<div class="navigation-bar">
+			<ul>
+				<li><a href="" draggable=false>Home (🔨)</a></li>
+				<li><a href="" draggable=false>mu (🔨)</a></li>
+			</ul>
+		</div>
+
+		<div class="description">
+			<div style="margin: 10px">
+				i'm probably never gonna finish this because im lazy but here it is anyway ILL MAKE IT LATER 😛😛
+			</div>
+		</div>
+
 	</body>
+
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@450&display=swap");
+
+		.description {
+			width: 80vw;
+			position: absolute;
+
+			justify-content: center;
+			display:flex;
+
+			background-color: #0000000c;
+			margin: 20px 10vw 20px 10vw;
+				
+			border: #00000080;
+			border-style: dashed;
+			border-width: 2px;
+		}
+
+		.navigation-bar {
+			background-color: #fbff00;
+			justify-content: space-between;
+			display: flex;
+		}
+
+		.navigation-bar ul li {
+			display: inline-block;
+			list-style: none;
+			margin: 0 20px;
+		}
+
+		.navigation-bar ul li a {
+			text-decoration: none;
+		}
+
+		* {
+			color: #0a0a0a;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		::-moz-selection {
+		  color: null;
+		  background: null;
+		}
+
+		::selection {
+		  color: null;
+		  background: null;
+		}
+
+		body {
+			background-color: #ffffff;
+			margin: 0;
+		}
+	</style>
+
+	<script>
+	</script>
 </html>
